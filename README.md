@@ -1,1 +1,1 @@
-# Cancer-Detection
+# Chesspiece-Detection
