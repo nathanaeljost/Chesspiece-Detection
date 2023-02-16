@@ -1,5 +1,7 @@
 # Chesspiece-Detection
 
+## Notes
+  * pickle files too big to push, retrieve them from onedrive (they are in the 'chess_data' shared folder) 
 
 ## Project structure
 ```bash
