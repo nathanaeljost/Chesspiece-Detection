@@ -2,6 +2,7 @@
 
 ## Notes
   * pickle files too big to push, retrieve them from onedrive (they are in the 'chess_data' shared folder) 
+  * since everyone seems to load in images directly for modelling, I saved the resized ones in the final_data folder
 
 ## Project structure
 ```bash
