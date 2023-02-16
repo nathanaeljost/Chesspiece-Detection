@@ -2,7 +2,7 @@
 
 
 ## Project structure
-.
+```bash
 ├── Pipfile
 ├── Pipfile.lock
 ├── README.md
@@ -50,3 +50,4 @@
 │           ├── _annotations.csv
 ├── data_preprocessing.ipynb
 └── model_build.ipynb
+```
