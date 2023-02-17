@@ -15,6 +15,11 @@ camera = cv2.VideoCapture(0)
 previous = time()
 delta = 0
 
+# Initialize chess figures
+chess_figures = {'black-bishop':2, 'black-king':1, 'black-queen':1, 'black-rook':2,
+'white-bishop':2, 'white-knight':2, 'white-king':1, 'white-queen':1,'black-knight':2, 
+'black-pawn':8, 'white-pawn':8, 'white-rook':2}
+
 text_location = st.empty()
 image_location = st.empty()
 
@@ -25,7 +30,7 @@ while run:
     previous = current
 
      # Check if 3 seconds passed
-    if delta > 5:
+    if delta > 3:
         # Show image
         text_location.text("New Picture")
         image_location.image(frame)
