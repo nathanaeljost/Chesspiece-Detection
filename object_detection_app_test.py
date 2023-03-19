@@ -1,4 +1,5 @@
 import re
+import time
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -57,7 +58,7 @@ def detect_objects(interpreter, image, threshold):
 
 
 def main():
-    interpreter = tf.lite.Interpreter(model_path='data/detect_new.tflite')
+    interpreter = tf.lite.Interpreter(model_path='data/detect_19.03.tflite')
     interpreter.allocate_tensors()
     _, input_height, input_width, _ = interpreter.get_input_details()[0]['shape']
 
@@ -65,7 +66,7 @@ def main():
     while True:
         ret, frame = cap.read()
         img = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), (320, 320))
-        res = detect_objects(interpreter, img, 0.25)
+        res = detect_objects(interpreter, img, 0.8)
         print(res)
 
         for result in res:
@@ -79,7 +80,7 @@ def main():
             cv2.putText(frame, labels[int(result['class_id'])]['name'], (xmin, min(ymax, CAMERA_HEIGHT - 20)),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 
-        cv2.imshow('Pi Feed', frame)
+        cv2.imshow('Chess figure detection', frame)
 
         if cv2.waitKey(10) & 0xFF == ord('q'):
             cap.release()
