@@ -8,7 +8,7 @@ st.markdown("# Chesspiece-Detection ♚ ♛")
 
 
 # Load the TFLite model
-interpreter = tf.lite.Interpreter(model_path='data/detect.tflite')
+interpreter = tf.lite.Interpreter(model_path='data/detect_28.03.tflite')
 interpreter.allocate_tensors()
 
 # Get input and output details
