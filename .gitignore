@@ -2,4 +2,6 @@
 /data/chess_new.p
 /data/chess_resized.p
 /data/final_data
+/data/df_total.pickle
+/data/df_train_deprecated.pickle
 **/.DS_store
