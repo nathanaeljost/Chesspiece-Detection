@@ -91,7 +91,7 @@ def main():
           )
 
         # Run object detection on the input image
-        results = detect_objects(interpreter, preprocessed_image, threshold=0.4)
+        results = detect_objects(interpreter, preprocessed_image, threshold=0.25)
         print(results)
 
         # Plot the detection results on the input image
@@ -112,7 +112,7 @@ def main():
           #print(class_id)
           color = [int(c) for c in COLORS[class_id]]
           
-          cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color, 2)
+          cv2.rectangle(frame, (xmin, ymin-100), (xmax, ymax-100), color, 2)
           # Make adjustments to make the label visible for all objects
           y = ymin - 15 if ymin - 15 > 15 else ymin + 15
           label = "{}: {:.0f}%".format(classes[class_id], obj['score'] * 100)
