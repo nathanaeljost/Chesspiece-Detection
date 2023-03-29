@@ -58,7 +58,7 @@ def detect_objects(interpreter, image, threshold):
 
 
 def main():
-    interpreter = tf.lite.Interpreter(model_path='data/detect_19.03.tflite')
+    interpreter = tf.lite.Interpreter(model_path='data/model_old_28.03.tflite')
     interpreter.allocate_tensors()
     _, input_height, input_width, _ = interpreter.get_input_details()[0]['shape']
 
@@ -66,7 +66,7 @@ def main():
     while True:
         ret, frame = cap.read()
         img = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), (320, 320))
-        res = detect_objects(interpreter, img, 0.8)
+        res = detect_objects(interpreter, img, 0.1)
         print(res)
 
         for result in res:
