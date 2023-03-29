@@ -75,7 +75,7 @@ def detect_objects(interpreter, image, threshold):
 
 
 def main():
-    interpreter = tf.lite.Interpreter(model_path='data/model_old_28.03.tflite')
+    interpreter = tf.lite.Interpreter(model_path='data/model_new_29.03.tflite')
     interpreter.allocate_tensors()
     #_, input_height, input_width, _ = interpreter.get_input_details()[0]['shape']
     _, input_height, input_width, _ = interpreter.get_input_details()[0]['shape']
