@@ -2,9 +2,12 @@
 
 ## Notes
   * `1_eda_data_preprocessing.ipynb` - eda and data preprocessing. Second part uses annotations csv from `2_check_annotations.ipynb`. Output: final data in data/final_data/ and `data/final_data/test_df.csv` as well as `data/final_data/train_df.csv`
+  
   * `2_check_annotations.ipynb` - uses `df_train.pickle` (available on request or output of `1_eda_data_preprocessing.ipynb`) provides annotation function that helps to label if annotations for an image are correct or not. Output: csv with that can be used to filter images based on correct or incorrect annotation.
+  
   * `3_TFOD_detection_model.ipynb` - Modeling with TensorFlow Object Detection API. Caution: Notebook was created and run in Google Colab. The model uses `data/final_data/test_df.csv` and `data/final_data/train_df.csv` in cell number 8 that are run from private Google drive. Adjust path accordingly to be able to run notebook. Output: `model.tflite`
-  * `4_object_detection_app.py` - Uses model from `data/model_x` to predict from live camera input. Threshold for detection to be adjusted in line 94.
+ 
+ * `4_object_detection_app.py` - Uses model from `data/model_x` to predict from live camera input. Threshold for detection to be adjusted in line 94.
 
 ## Project structure
 ```bash
